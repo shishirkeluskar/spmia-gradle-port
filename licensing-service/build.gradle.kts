@@ -16,4 +16,16 @@ java {
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+  implementation("org.springframework.cloud:spring-cloud-starter-config")
+  implementation("org.springframework.cloud:spring-cloud-config-client")
+
+//  runtimeOnly("com.h2database:h2")
+  runtimeOnly("org.postgresql:postgresql")
+}
+
+dependencyManagement {
+  imports {
+    mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR5")
+  }
 }
